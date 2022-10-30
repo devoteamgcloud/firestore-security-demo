@@ -5,6 +5,6 @@ import (
 	"github.com/kaan-devoteam/one-click-deploy-demo/modules/data"
 )
 
-func CreateGossip(token, title, content string) (entity.Gossip, error) {
-	return data.Gossip{}.Create(token, title, content)
+func CreateArticle(token, title, content string) (entity.Article, error) {
+	return data.Article{}.Create(token, title, content)
 }

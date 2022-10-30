@@ -5,7 +5,7 @@ import (
 	"github.com/kaan-devoteam/one-click-deploy-demo/modules/data"
 )
 
-func GetGossips(token string) ([]entity.Gossip, error) {
-	gossips, err := data.Gossips{}.GetAllGossips(token)
-	return gossips, err
+func GetArticles(token string) ([]entity.Article, error) {
+	articles, err := data.Articles{}.GetAllArticles(token)
+	return articles, err
 }

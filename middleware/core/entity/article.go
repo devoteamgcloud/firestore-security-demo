@@ -1,6 +1,6 @@
 package entity
 
-type Gossip interface {
+type Article interface {
 	Title() string
 	Content() string
 	User() string
