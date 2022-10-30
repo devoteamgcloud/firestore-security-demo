@@ -38,7 +38,7 @@ func (controller *PostArticle) View(c *gin.Context) {
 		badRequestIfError(c, err)
 	}
 	var articleCreated models.CreateArticleResponseModel
-	article, err := usecase.CreateGossip(token, newArticle.Title, newArticle.Content)
+	article, err := usecase.CreateArticle(token, newArticle.Title, newArticle.Content)
 	if err != nil {
 		c.IndentedJSON(http.StatusNotAcceptable, err.Error())
 		return

@@ -14,7 +14,7 @@ type CreateArticleResponseModel struct {
 	//User    string `json:"user"`
 }
 
-func (g *CreateArticleResponseModel) FromEntity(entity entity.Gossip) *CreateArticleResponseModel {
+func (g *CreateArticleResponseModel) FromEntity(entity entity.Article) *CreateArticleResponseModel {
 	g.Content = entity.Content()
 	g.Title = entity.Title()
 	return g

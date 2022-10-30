@@ -5,8 +5,8 @@ type RestValue struct {
 }
 
 type Rest struct {
-	Gossip RestValue `json:"content"`
-	Title  RestValue `json:"title"`
+	Content RestValue `json:"content"`
+	Title   RestValue `json:"title"`
 }
 
 type RestDoc struct {
