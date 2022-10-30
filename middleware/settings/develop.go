@@ -13,7 +13,7 @@ var (
 const (
 	ServerPort        = 8080
 	DatabaseProjectID = "kaan-sandbox"
-	Name              = "Gossip-Backend"
+	Name              = "Articles-Backend"
 	ServerTimeout     = 60 * time.Second
 
 	ServerAccessLog = true
