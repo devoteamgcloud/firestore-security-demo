@@ -1,4 +1,4 @@
-package gossip
+package article
 
 import (
 	"encoding/json"
@@ -8,17 +8,17 @@ import (
 	"cloud.google.com/go/firestore"
 	"github.com/gin-gonic/gin"
 
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/gossip/models"
+	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/article/models"
 	"github.com/kaan-devoteam/one-click-deploy-demo/core/usecase"
 	"github.com/kaan-devoteam/one-click-deploy-demo/log"
 )
 
-type PostGossip struct {
+type PostArticle struct {
 	Database *firestore.Client
 }
 
-func (controller *PostGossip) View(c *gin.Context) {
-	var newGossip models.CreateGossipRequestModel
+func (controller *PostArticle) View(c *gin.Context) {
+	var newArticle models.CreateArticleRequestModel
 	var err error
 	jsonData, err := ioutil.ReadAll(c.Request.Body)
 	header := c.Request.Header["Authorization"]
@@ -33,18 +33,18 @@ func (controller *PostGossip) View(c *gin.Context) {
 	if err != nil {
 		badRequestIfError(c, err)
 	}
-	err = json.Unmarshal(jsonData, &newGossip)
+	err = json.Unmarshal(jsonData, &newArticle)
 	if err != nil {
 		badRequestIfError(c, err)
 	}
-	var gossipCreated models.CreateGossipResponseModel
-	gossip, err := usecase.CreateGossip(token, newGossip.Title, newGossip.Content)
+	var articleCreated models.CreateArticleResponseModel
+	article, err := usecase.CreateGossip(token, newArticle.Title, newArticle.Content)
 	if err != nil {
 		c.IndentedJSON(http.StatusNotAcceptable, err.Error())
 		return
 	}
-	gossipCreated.FromEntity(gossip)
-	c.IndentedJSON(http.StatusCreated, gossipCreated)
+	articleCreated.FromEntity(article)
+	c.IndentedJSON(http.StatusCreated, articleCreated)
 }
 
 func badRequestIfError(c *gin.Context, err error) {

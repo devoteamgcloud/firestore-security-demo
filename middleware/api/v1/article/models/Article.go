@@ -2,19 +2,19 @@ package models
 
 import "github.com/kaan-devoteam/one-click-deploy-demo/core/entity"
 
-type CreateGossipRequestModel struct {
+type CreateArticleRequestModel struct {
 	Title   string `json:"title"`
 	Content string `json:"content"`
 	//User    string `json:"user"`
 }
 
-type CreateGossipResponseModel struct {
+type CreateArticleResponseModel struct {
 	Title   string `json:"title"`
 	Content string `json:"content"`
 	//User    string `json:"user"`
 }
 
-func (g *CreateGossipResponseModel) FromEntity(entity entity.Gossip) *CreateGossipResponseModel {
+func (g *CreateArticleResponseModel) FromEntity(entity entity.Gossip) *CreateArticleResponseModel {
 	g.Content = entity.Content()
 	g.Title = entity.Title()
 	return g
