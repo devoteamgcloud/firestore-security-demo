@@ -10,6 +10,8 @@ import (
 )
 
 func RequestPostWithToken(url, token string, body io.Reader) ([]byte, error) {
+	// Makes request to firestore RestAPI url using Article model body (unmarshalled)
+	// and the token comes from frontend
 	req, errRequest := http.NewRequest(http.MethodPost, url, body)
 	if errRequest != nil {
 		log.Error(errRequest.Error())

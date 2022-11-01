@@ -37,7 +37,7 @@ func (a Article) Create(token, title, content string) (entity.Article, error) {
 }
 
 func getBodyFromRestModel(title, content string) io.Reader {
-	data := models.RestDoc{Fields: models.Rest{Content: models.RestValue{Value: content}, Title: models.RestValue{Value: title}}}
+	data := models.RestDoc{Fields: models.RestArticleMap{Content: models.RestValue{Value: content}, Title: models.RestValue{Value: title}}}
 	bodyBytes, _ := json.Marshal(data)
 	body := bytes.NewBuffer(bodyBytes)
 	return body
