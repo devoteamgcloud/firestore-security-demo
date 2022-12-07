@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/kaan-devoteam/one-click-deploy-demo/log"
+	"github.com/kaan-devoteam/firestore-security-demo/log"
 )
 
 var (

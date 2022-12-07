@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/kaan-devoteam/one-click-deploy-demo/log"
+	"github.com/kaan-devoteam/firestore-security-demo/log"
 )
 
 func RequestPostWithToken(url, token string, body io.Reader) ([]byte, error) {

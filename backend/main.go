@@ -4,7 +4,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/server"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/server"
 )
 
 func main() {

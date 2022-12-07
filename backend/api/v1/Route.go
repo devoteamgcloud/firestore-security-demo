@@ -5,9 +5,9 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/article"
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/articles"
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/database"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/article"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/articles"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/database"
 )
 
 func Router(router gin.IRouter) {

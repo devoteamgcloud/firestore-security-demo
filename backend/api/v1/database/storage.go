@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"cloud.google.com/go/firestore"
-	"github.com/kaan-devoteam/one-click-deploy-demo/settings"
+	"github.com/kaan-devoteam/firestore-security-demo/settings"
 )
 
 func New() *firestore.Client {

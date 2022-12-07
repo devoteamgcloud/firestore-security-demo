@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/kaan-devoteam/one-click-deploy-demo/core/entity"
-	"github.com/kaan-devoteam/one-click-deploy-demo/log"
-	"github.com/kaan-devoteam/one-click-deploy-demo/modules/data/models"
-	"github.com/kaan-devoteam/one-click-deploy-demo/settings"
+	"github.com/kaan-devoteam/firestore-security-demo/core/entity"
+	"github.com/kaan-devoteam/firestore-security-demo/log"
+	"github.com/kaan-devoteam/firestore-security-demo/modules/data/models"
+	"github.com/kaan-devoteam/firestore-security-demo/settings"
 )
 
 type Article struct {

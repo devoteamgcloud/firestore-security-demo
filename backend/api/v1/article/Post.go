@@ -7,10 +7,9 @@ import (
 
 	"cloud.google.com/go/firestore"
 	"github.com/gin-gonic/gin"
-
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/article/models"
-	"github.com/kaan-devoteam/one-click-deploy-demo/core/usecase"
-	"github.com/kaan-devoteam/one-click-deploy-demo/log"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/article/models"
+	"github.com/kaan-devoteam/firestore-security-demo/core/usecase"
+	"github.com/kaan-devoteam/firestore-security-demo/log"
 )
 
 type PostArticle struct {

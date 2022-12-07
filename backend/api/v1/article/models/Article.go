@@ -1,6 +1,6 @@
 package models
 
-import "github.com/kaan-devoteam/one-click-deploy-demo/core/entity"
+import "github.com/kaan-devoteam/firestore-security-demo/core/entity"
 
 type CreateArticleRequestModel struct {
 	Title   string `json:"title"`

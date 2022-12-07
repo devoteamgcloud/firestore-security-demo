@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kaan-devoteam/one-click-deploy-demo/api/v1/models"
-	"github.com/kaan-devoteam/one-click-deploy-demo/log"
+	"github.com/kaan-devoteam/firestore-security-demo/api/v1/models"
+	"github.com/kaan-devoteam/firestore-security-demo/log"
 )
 
 func UnprocessableEntityResponse(err error, ctx *gin.Context) {
