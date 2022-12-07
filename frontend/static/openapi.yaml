@@ -1,0 +1,137 @@
+openapi: 3.0.3
+info:
+  title: Loyalty API
+  description:
+    Let's gossip through apis
+  version: 1.0.0
+  contact:
+    name: Kaan Kizilirmak
+    email: kaan.kizilirmak@devoteam.com
+servers:
+  - url: 'https://one-click-deploy-demo-vebfdks4qq-ew.a.run.app'
+    description: Prod backend
+security:
+  - bearerAuth: []
+paths:
+  /api/v1/gossips/gossip:
+    options:
+      operationId: createGossip
+      responses:
+        201:
+          description: Creating a gossip
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      operationId: createGossip
+      description: Create a gossip.
+      summary: Create a new gossip.
+      requestBody:
+        description: The gossip request.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGossip'
+      responses:
+        201:
+          description: The gossip has been created.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Response'
+                  - properties:
+                      gossip:
+                        $ref: '#/components/schemas/Gossip'
+        500:
+          description: When something goes wrong on the server side.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+      tags:
+        - API V1
+  /api/v1/gossips/gossips:
+    options:
+      operationId: listGossip
+      responses:
+        200:
+          description: Listing gossips
+          content:
+            text/plain:
+              schema:
+                type: string
+    get:
+      operationId: listGossips
+      description: Listing gossips.
+      summary: List gossips.
+      responses:
+        200:
+          description: The gossips are listed.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Response'
+                  - properties:
+                      gossips:
+                        $ref: '#/components/schemas/Gossips'
+        500:
+          description: When something goes wrong on the server side.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+      tags:
+        - API V1
+components:
+  schemas:
+    Response:
+      type: object
+      description: Generic response for all the calls.
+      required:
+        - code
+      properties:
+        content:
+          type: string
+          description: The state of the response.
+    Gossips:
+      allOf:
+        - type: object
+          description: The list of gossips.
+          properties:
+            gossips:
+              type: array
+              items:
+                $ref: '#/components/schemas/Gossip'
+    Gossip:
+      type: object
+      required:
+        - title
+        - content
+      properties:
+        title:
+          type: string
+          description: The gossip title.
+        content:
+          type: string
+          description: The gossip title.
+    CreateGossip:
+      type: object
+      required:
+        - title
+        - content
+      properties:
+        title:
+          type: string
+          description: The gossip title.
+        content:
+          type: string
+          description: The gossip title.
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes

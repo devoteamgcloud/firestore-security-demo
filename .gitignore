@@ -106,9 +106,11 @@ celerybeat.pid
 .venv
 env/
 venv/
+node_modules/
 ENV/
 env.bak/
 venv.bak/
+package-lock.json
 
 # Spyder project settings
 .spyderproject
