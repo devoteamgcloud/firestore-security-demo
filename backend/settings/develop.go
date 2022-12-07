@@ -1,6 +1,7 @@
 package settings
 
 import (
+	"os"
 	"time"
 
 	"github.com/kaan-devoteam/one-click-deploy-demo/log"
@@ -8,12 +9,12 @@ import (
 
 var (
 	Version = "dev"
+	ApiKey  = os.Getenv("ApiKey")
 )
 
 const (
 	ServerPort        = 8080
 	DatabaseProjectID = "project-id"
-	ApiKey            = "key=AIzaSyC2gQdpHk-rSNgRfvMtNIUccJQ8dy5kMGs"
 	Name              = "Articles-Backend"
 	ServerTimeout     = 60 * time.Second
 

@@ -55,7 +55,3 @@ func (a Article) Title() string {
 func (a Article) User() string {
 	return a.model.User
 }
-
-func (a Article) Policy() entity.PolicyCode {
-	return entity.PolicyCodeFromString(a.model.Policy)
-}

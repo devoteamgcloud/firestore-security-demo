@@ -47,7 +47,3 @@ func (u *User) Database() *firestore.Client {
 func (u *User) Role() entity.RoleCode {
 	return entity.RoleCodeFromString(u.model.Role)
 }
-
-func (u *User) Department() entity.DepartmentCode {
-	return entity.DepartmentCodeFromString(u.model.Department)
-}

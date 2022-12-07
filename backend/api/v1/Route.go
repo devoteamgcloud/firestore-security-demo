@@ -12,7 +12,7 @@ import (
 
 func Router(router gin.IRouter) {
 
-	datasource := database.New() // Creates a Firestore Client using Admin SDK - only used for testing
+	datasource := database.New() // Creates a Firestore Client using Admin SDK - only used for fetching users
 	group := router.Group("api/v1/articles")
 	var contPost = article.PostArticle{Database: datasource}
 	group.POST("/article", contPost.View)
