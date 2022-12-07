@@ -7,6 +7,7 @@ import (
 	"github.com/kaan-devoteam/one-click-deploy-demo/core/entity"
 	"github.com/kaan-devoteam/one-click-deploy-demo/log"
 	"github.com/kaan-devoteam/one-click-deploy-demo/modules/data/models"
+	"github.com/kaan-devoteam/one-click-deploy-demo/settings"
 )
 
 type Articles struct {
@@ -14,9 +15,9 @@ type Articles struct {
 }
 
 func (a Articles) GetAllArticles(token string) ([]entity.Article, error) {
-	urlApi := "https://firestore.googleapis.com/v1/"
-	parent := "projects/kaan-sandbox/databases/(default)/documents/articles"
-	key := "?key=AIzaSyC2gQdpHk-rSNgRfvMtNIUccJQ8dy5kMGs"
+	urlApi := settings.FirestoreRestUrl
+	parent := fmt.Sprintf("projects/%s/databases/(default)/documents/articles", settings.DatabaseProjectID)
+	key := fmt.Sprintf("?%s", settings.ApiKey)
 	urlFinal := fmt.Sprintf("%s%s%s", urlApi, parent, key)
 	response, err := RequestGetWithToken(urlFinal, token)
 

@@ -27,9 +27,6 @@ func (controller *PostArticle) View(c *gin.Context) {
 		return
 	}
 	token := header[0]
-	//log.Info(string(jsonData))
-	//log.Info(c.Request.Header["Authorization"][0])
-	//log.Info(c.Request.Header["Token"][0])
 	if err != nil {
 		badRequestIfError(c, err)
 	}
